@@ -1,0 +1,53 @@
+.flip-container {
+    width: 45%;
+    height: 500px;
+    perspective: 1000px;
+    padding: 2.5%;
+}
+
+.flipper {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.flip-container:hover .flipper {
+    transform: rotateY(-180deg);
+    /* se quiser uma animação na vertical,
+      troque por rotateX(180deg)
+      */
+}
+
+.front {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #4a26afb7;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #a51a7b;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.back {
+    transform: rotateY(-180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
